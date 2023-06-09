@@ -6,35 +6,7 @@ namespace QuadEqWithInputVal
 {
     internal class Program
     {
-        public static void DisplayContents(ICollection keyCollection, ICollection valueCollection, int dictionarySize)
-        {
-            string[] myKeys = new string[dictionarySize];
-            float[] myValues = new float[dictionarySize];
-            keyCollection.CopyTo(myKeys, 0);
-            valueCollection.CopyTo(myValues, 0);
-
-            Console.WriteLine("   INDEX KEY                       VALUE");
-            for (int i = 0; i < dictionarySize; i++)
-            {
-                Console.WriteLine("   {0,-5} {1,-25} {2}",
-                    i, myKeys[i], myValues[i]);
-            }
-            Console.WriteLine();
-        }
-        public static string DisplayKey(ICollection keyCollection, int dictionarySize, int i)
-        {
-            string[] myKeys = new string[dictionarySize];
-            keyCollection.CopyTo(myKeys, 0);
-            return myKeys[i];
-        }
-        public static float DisplayValue(ICollection valueCollection, int dictionarySize, int i)
-        {
-            float[] myValues = new float[dictionarySize];
-            valueCollection.CopyTo(myValues, 0);
-
-            return myValues[i];
-
-        }
+        
         static void Main(string[] args)
         {
             string str;
@@ -59,7 +31,7 @@ namespace QuadEqWithInputVal
                     {
                         while (true)
                         {
-                            Console.Write($"Give {DisplayKey(keyCollection, myOrdDict.Count, i)}: ");
+                            Console.Write($"Give {KeyExtract.DisplayKey(keyCollection, myOrdDict.Count, i)}: ");
                             str = Console.ReadLine();
                             if (str.Contains('.'))
                             {
@@ -74,17 +46,17 @@ namespace QuadEqWithInputVal
                         resultParse = float.TryParse(str, out temp);
                         if (!resultParse)
                         {
-                            Console.WriteLine($"Coefficient {DisplayKey(keyCollection, myOrdDict.Count, i)} is not a double!");
+                            Console.WriteLine($"Coefficient {KeyExtract.DisplayKey(keyCollection, myOrdDict.Count, i)} is not a double!");
                         }
                         else
                         {
-                            myOrdDict[DisplayKey(keyCollection, myOrdDict.Count, i)] = temp;
+                            myOrdDict[KeyExtract.DisplayKey(keyCollection, myOrdDict.Count, i)] = temp;
                             break;
                         }
                     }
 
                 }
-                Coefficients coefficients = new Coefficients(DisplayValue(valueCollection, myOrdDict.Count, 0), DisplayValue(valueCollection, myOrdDict.Count, 1), DisplayValue(valueCollection, myOrdDict.Count, 2));
+                Coefficients coefficients = new Coefficients(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2));
                 CoeffValidator validator = new CoeffValidator();
                 var result = validator.Validate(coefficients);
 
@@ -98,7 +70,7 @@ namespace QuadEqWithInputVal
                 }
                 if (coefficients.a == 0.0)
                 {
-                    Console.WriteLine($"Coefficient {DisplayKey(keyCollection, myOrdDict.Count, 0)} cannot be zero!");
+                    Console.WriteLine($"Coefficient {KeyExtract.DisplayKey(keyCollection, myOrdDict.Count, 0)} cannot be zero!");
                     Console.WriteLine("Please start again with your input");
                     check = true;
 
@@ -109,13 +81,13 @@ namespace QuadEqWithInputVal
                 }
                 for (int i = 0; i < 2; i++)
                 {
-                    myOrdDict[DisplayKey(keyCollection, myOrdDict.Count, i)] = 0;
+                    myOrdDict[KeyExtract.DisplayKey(keyCollection, myOrdDict.Count, i)] = 0;
                 }
 
             }
             Console.WriteLine();
             Console.WriteLine("Your input was successfully validated:");
-            DisplayContents(keyCollection, valueCollection, myOrdDict.Count);
+            KeyExtract.DisplayContents(keyCollection, valueCollection, myOrdDict.Count);
         }
     }
 }
