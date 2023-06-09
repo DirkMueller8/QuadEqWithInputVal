@@ -21,12 +21,11 @@ namespace QuadEqWithInputVal
     {
         public static void DisplayContents(ICollection keyCollection, ICollection valueCollection, int dictionarySize)
         {
-            String[] myKeys = new String[dictionarySize];
+            string[] myKeys = new string[dictionarySize];
             float[] myValues = new float[dictionarySize];
             keyCollection.CopyTo(myKeys, 0);
             valueCollection.CopyTo(myValues, 0);
 
-            // Displays the contents of the OrderedDictionary
             Console.WriteLine("   INDEX KEY                       VALUE");
             for (int i = 0; i < dictionarySize; i++)
             {
@@ -37,11 +36,9 @@ namespace QuadEqWithInputVal
         }
         public static string DisplayKey(ICollection keyCollection, int dictionarySize, int i)
         {
-            String[] myKeys = new String[dictionarySize];
+            string[] myKeys = new string[dictionarySize];
             keyCollection.CopyTo(myKeys, 0);
-
             return myKeys[i];
-
         }
         public static float DisplayValue(ICollection valueCollection, int dictionarySize, int i)
         {
@@ -90,12 +87,11 @@ namespace QuadEqWithInputVal
                         resultParse = float.TryParse(str, out temp);
                         if (!resultParse)
                         {
-                            Console.WriteLine($"Coefficient {myOrdDict[DisplayKey(keyCollection, myOrdDict.Count, i)]} is not a double!");
+                            Console.WriteLine($"Coefficient {DisplayKey(keyCollection, myOrdDict.Count, i)} is not a double!");
                         }
                         else
                         {
                             myOrdDict[DisplayKey(keyCollection, myOrdDict.Count, i)] = temp;
-                            DisplayContents(keyCollection, valueCollection, myOrdDict.Count);
                             break;
                         }
                     }
@@ -115,7 +111,8 @@ namespace QuadEqWithInputVal
                 }
                 if (coefficients.a == 0.0)
                 {
-                    Console.WriteLine($"Coefficient {myOrdDict[DisplayKey(keyCollection, myOrdDict.Count, 0)]} cannot be zero!");
+                    Console.WriteLine($"Coefficient {DisplayKey(keyCollection, myOrdDict.Count, 0)} cannot be zero!");
+                    Console.WriteLine("Please start again with your input");
                     check = true;
 
                 }
@@ -129,7 +126,8 @@ namespace QuadEqWithInputVal
                 }
 
             }
-            Console.WriteLine("Bin am Ende angekommen");
+            Console.WriteLine("Your validated input was:");
+            DisplayContents(keyCollection, valueCollection, myOrdDict.Count);
         }
     }
 }
