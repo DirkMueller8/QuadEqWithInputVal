@@ -22,6 +22,8 @@ For the validation of the user input I used the NuGet package `fluentvalidation`
 
 **Storing values**
 
-To follow the DRY principle and to store the names and values of the coefficients a, b and c I used the `OrderedDictionary` Class (https://learn.microsoft.com/en-us/dotnet/api/system.collections.specialized.ordereddictionary?view=net-7.0)
+To follow the DRY principle and to store the names and values of the coefficients a, b and c, I used the `OrderedDictionary` Class (https://learn.microsoft.com/en-us/dotnet/api/system.collections.specialized.ordereddictionary?view=net-7.0)
 
 ![](https://github.com/DirkMueller8/QuadEqWithInputVal/blob/master/OrderedDict.png)
+
+*Fig 2: Input example for coefficients stored in a `OrderedDictionary` *

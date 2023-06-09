@@ -7,6 +7,18 @@ using System.Threading.Tasks;
 
 namespace QuadEqWithInputVal
 {
+    public class Coefficients
+    {
+        public float a { get; set; }
+        public float b { get; set; }
+        public float c { get; set; }
+        public Coefficients(float a, float b, float c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+    }
     public class CoeffValidator : AbstractValidator<Coefficients>
     {
         float maxSize = float.MaxValue;

@@ -4,19 +4,6 @@ using System.Collections.Specialized;
 
 namespace QuadEqWithInputVal
 {
-    public class Coefficients
-    {
-        public float a { get; set; }
-        public float b { get; set; }
-        public float c { get; set; }
-        public Coefficients(float a, float b, float c)
-        {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        }
-    }
-
     internal class Program
     {
         public static void DisplayContents(ICollection keyCollection, ICollection valueCollection, int dictionarySize)
