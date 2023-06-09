@@ -126,7 +126,8 @@ namespace QuadEqWithInputVal
                 }
 
             }
-            Console.WriteLine("Your validated input was:");
+            Console.WriteLine();
+            Console.WriteLine("Your input was successfully validated:");
             DisplayContents(keyCollection, valueCollection, myOrdDict.Count);
         }
     }
