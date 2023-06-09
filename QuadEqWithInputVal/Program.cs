@@ -1,8 +1,6 @@
 ﻿global using FluentValidation;
-using System;
 using System.Collections;
 using System.Collections.Specialized;
-using System.ComponentModel.DataAnnotations;
 
 namespace QuadEqWithInputVal
 {
@@ -97,6 +95,15 @@ namespace QuadEqWithInputVal
             Console.WriteLine("   Your input was successfully validated and here the summary:");
             Console.WriteLine();
             KeyExtract.DisplayContents(keyCollection, valueCollection, myOrdDict.Count);
+
+            // Calculation of results, if any exist:
+            if (SolvableYesNo.Solvable(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2)))
+            {
+                Console.WriteLine("   \nThe quadratic equation yields a result, as real number(s)");
+
+                var results = Calculate.QuadResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2));
+                Console.WriteLine($"found {results.Item1} {results.Item2}.");
+            }
         }
     }
 }
