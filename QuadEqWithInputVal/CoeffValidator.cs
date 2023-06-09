@@ -26,21 +26,21 @@ namespace QuadEqWithInputVal
         {
             RuleFor(x => x.a)
                 .NotEqual(0)
-                .WithMessage("Input for a cannot be zero: no quadratic equation")
+                .WithMessage("   \nInput for a cannot be zero: no quadratic equation\n")
                 .LessThan(maxSize)
-                .WithMessage("Input for a too big");
+                .WithMessage("   \nInput for a too big\n");
 
             RuleFor(x => x.b)
                 .NotEmpty()
-                .WithMessage("Input for b cannot be empty")
+                .WithMessage("   \nInput for b cannot be empty\n")
                 .LessThan(maxSize)
-                .WithMessage("Input for b too big");
+                .WithMessage("   \nInput for b too big\n");
 
             RuleFor(x => x.c)
                 .NotEmpty()
-                .WithMessage("Input for c cannot be empty")
+                .WithMessage("   \nInput for c cannot be empty\n")
                 .LessThan(maxSize)
-                .WithMessage("Input for c too big");
+                .WithMessage("   \nInput for c too big\n");
         }
     }
 }
