@@ -34,3 +34,8 @@ The static method `Solvable()` (within class `SolvableYesNo()`) determines if a 
 The static method `SingleResult` (within class `SolvableYesNo()`) determines if exactly one solution exists.
 Depending on these results either `QuadResult()` (within class `Calculate()`) is called to return a tuple of two solutions.
 Or, in case of a one-solution case, the method `SingleResult()` (within class `Calculate()`) is called to calculate it.
+
+**Unit Tests**
+
+I used the MSTest library `Microsoft.VisualStudio.TestTools.UnitTesting` for unit testing, to cover various cases. 
+I also included a tolerance for the sake of incorporating rounding erros, as they can typically occur with floats.
