@@ -111,6 +111,10 @@ namespace QuadEqWithInputVal
                     Console.WriteLine($"These are the two solutions: {results.Item1} and {results.Item2}.");
                 }
             }
+            else
+            {
+                Console.WriteLine("   \nThe quadratic equation yields no result (real number does not exist)");
+            }
         }
     }
 }
