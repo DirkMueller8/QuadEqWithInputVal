@@ -101,8 +101,15 @@ namespace QuadEqWithInputVal
             {
                 Console.WriteLine("   \nThe quadratic equation yields a result, as real number(s)");
 
-                var results = Calculate.QuadResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2));
-                Console.WriteLine($"found {results.Item1} {results.Item2}.");
+                if (OneResultOnly.SingleResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2)))
+                {
+                    Console.WriteLine($"This is the single result: {Calculate.SingleResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2))}");
+                }
+                else
+                {
+                    var results = Calculate.QuadResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2));
+                    Console.WriteLine($"These are the two solutions: {results.Item1} and {results.Item2}.");
+                }
             }
         }
     }

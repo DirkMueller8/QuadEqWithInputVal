@@ -22,5 +22,10 @@ namespace QuadEqWithInputVal
             this.b = b;
             this.c = c;
         }
+        public static float SingleResult(float a, float b, float c)
+        {
+            float result = - b / 2.0F / a;
+            return (result);
+        }
     }
 }
