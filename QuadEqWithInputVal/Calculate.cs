@@ -1,13 +1,12 @@
-﻿using System;
-
-namespace QuadEqWithInputVal
+﻿namespace QuadEqWithInputVal
 {
-
     public class Calculate
     {
         public float a { get; set; }
         public float b { get; set; }
         public float c { get; set; }
+
+        // Calculation of the two-result case:
         public static (float, float) QuadResult(float a, float b, float c)
         {
             float quad;
@@ -16,12 +15,15 @@ namespace QuadEqWithInputVal
             float result2 = (-quad - b) / 2.0F / a;
             return (result1, result2);
         }
+
         public Calculate(float a, float b, float c)
         {
             this.a = a;
             this.b = b;
             this.c = c;
         }
+
+        // Calculation of the case when there is only one solution:
         public static float SingleResult(float a, float b, float c)
         {
             float result = - b / 2.0F / a;

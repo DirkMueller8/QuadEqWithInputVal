@@ -7,7 +7,7 @@ namespace TestQuadSolution
     [TestClass]
     public class UnitTest1
     {
-
+        // Test for two-solution case: 1st solution: 
         [TestMethod]
         public void Test1()
         {
@@ -20,6 +20,7 @@ namespace TestQuadSolution
             Assert.AreEqual(0.0F, Math.Round(returnedValue.Item1 - expectedValue.Item1, 4));
         }
 
+        // Test for two-solution case: 2nd solution: 
         [TestMethod]
         public void Test2()
         {
@@ -32,7 +33,7 @@ namespace TestQuadSolution
             Assert.AreEqual(0.0F, Math.Round(returnedValue.Item2 - expectedValue.Item2, 4));
         }
 
-
+        // Test, if solution exists; in this case it does:
         [TestMethod]
         public void Test3()
         {
@@ -45,6 +46,7 @@ namespace TestQuadSolution
             Assert.AreEqual(returnedValue,expectedValue);
         }
 
+        // Test, if solution exists; in this case it does not:
         [TestMethod]
         public void Test4()
         {
@@ -56,8 +58,9 @@ namespace TestQuadSolution
             returnedValue = SolvableYesNo.Solvable(a, b, c);
             Assert.AreEqual(returnedValue, expectedValue);
         }
-        [TestMethod]
         
+        // Test the case when only one solution exists:
+        [TestMethod]
         public void Test5()
         {
             float returnedValue;

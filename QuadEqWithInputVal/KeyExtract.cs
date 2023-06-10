@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace QuadEqWithInputVal
 {
@@ -17,10 +12,10 @@ namespace QuadEqWithInputVal
             keyCollection.CopyTo(myKeys, 0);
             valueCollection.CopyTo(myValues, 0);
 
-            Console.WriteLine("   INDEX KEY             VALUE");
+            Console.WriteLine("   (INDEX) COEFFICIENT             VALUE");
             for (int i = 0; i < dictionarySize; i++)
             {
-                Console.WriteLine("   {0,-5} {1,-15} {2}",
+                Console.WriteLine("   {0,-7} {1,-23} {2}",
                     i, myKeys[i], myValues[i]);
             }
             Console.WriteLine();
@@ -41,9 +36,7 @@ namespace QuadEqWithInputVal
         {
             float[] myValues = new float[dictionarySize];
             valueCollection.CopyTo(myValues, 0);
-
             return myValues[i];
-
         }
     }
 }

@@ -1,11 +1,4 @@
-﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QuadEqWithInputVal
+﻿namespace QuadEqWithInputVal
 {
     public class Coefficients
     {
@@ -31,14 +24,10 @@ namespace QuadEqWithInputVal
                 .WithMessage("   \nInput for a too big\n");
 
             RuleFor(x => x.b)
-                .NotEmpty()
-                .WithMessage("   \nInput for b cannot be empty\n")
                 .LessThan(maxSize)
                 .WithMessage("   \nInput for b too big\n");
 
             RuleFor(x => x.c)
-                .NotEmpty()
-                .WithMessage("   \nInput for c cannot be empty\n")
                 .LessThan(maxSize)
                 .WithMessage("   \nInput for c too big\n");
         }

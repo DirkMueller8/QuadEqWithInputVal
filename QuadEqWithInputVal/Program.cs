@@ -29,11 +29,11 @@ namespace QuadEqWithInputVal
             ICollection keyCollection = myOrdDict.Keys;
             ICollection valueCollection = myOrdDict.Values;
 
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("This program solves the quadratic equation ax ^ 2 + b * x + c = 0");
-            Console.WriteLine("It will ask you for the coefficients a, b and c and will validate the input");
-            Console.WriteLine("Finally it tells you if it is solvable and, if so, displays the result(s).");
-            Console.WriteLine("***************************************************************************\n");
+            Console.WriteLine("*******************************************************************************");
+            Console.WriteLine("* This program solves the quadratic equation ax ^ 2 + b * x + c = 0           *");
+            Console.WriteLine("* It will ask you for the coefficients a, b and c and will validate the input *");
+            Console.WriteLine("* Finally it tells you if it is solvable and, if so, displays the result(s).  *");
+            Console.WriteLine("*******************************************************************************\n");
 
             // Input validation loop:
             while (true)
@@ -91,24 +91,36 @@ namespace QuadEqWithInputVal
                 }
 
             }
+
             Console.WriteLine();
             Console.WriteLine("   Your input was successfully validated and here the summary:");
             Console.WriteLine();
+            Console.WriteLine("*******************************************************************************");
+            Console.WriteLine("*                                                                             *");
+            Console.WriteLine("*                              Your input                                     *");
+            Console.WriteLine("*                                                                             *");
+            Console.WriteLine("*******************************************************************************\n");
             KeyExtract.DisplayContents(keyCollection, valueCollection, myOrdDict.Count);
+
+            Console.WriteLine("*******************************************************************************");
+            Console.WriteLine("*                                                                             *");
+            Console.WriteLine("*                              Results                                        *");
+            Console.WriteLine("*                                                                             *");
+            Console.WriteLine("*******************************************************************************\n");
 
             // Calculation of results, if any exist:
             if (SolvableYesNo.Solvable(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2)))
             {
-                Console.WriteLine("   \nThe quadratic equation yields a result, as real number(s)");
+                Console.WriteLine("   The quadratic equation yields a result, as real number(s)");
 
                 if (OneResultOnly.SingleResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2)))
                 {
-                    Console.WriteLine($"This is the single result: {Calculate.SingleResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2))}");
+                    Console.WriteLine($"   This is the single result: {Calculate.SingleResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2))}");
                 }
                 else
                 {
                     var results = Calculate.QuadResult(KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 0), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 1), KeyExtract.DisplayValue(valueCollection, myOrdDict.Count, 2));
-                    Console.WriteLine($"These are the two solutions: {results.Item1} and {results.Item2}.");
+                    Console.WriteLine($"   These are the two solutions: {results.Item1} and {results.Item2}.");
                 }
             }
             else
