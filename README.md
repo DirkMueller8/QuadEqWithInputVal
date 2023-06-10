@@ -28,7 +28,7 @@ To follow the DRY principle and to store the names and values of the coefficient
 
 *Fig 2: Input example for coefficients stored in a `OrderedDictionary` *
 
-**Determination if solution exists
+**Determination if solution exists**
 
 The static method `Solvable()` (within class `SolvableYesNo()`) determines if a solution exists. 
 The static method `SingleResult` (within class `SolvableYesNo()`) determines if exactly one solution exists.
