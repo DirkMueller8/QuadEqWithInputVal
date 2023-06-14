@@ -1,13 +1,11 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using QuadEqWithInputVal;
 
 namespace TestQuadSolution
 {
-
     [TestClass]
     public class UnitTest1
     {
-        // Test for two-solution case: 1st solution: 
+        // Test for two-solution case: 1st solution:
         [TestMethod]
         public void Test1()
         {
@@ -20,7 +18,7 @@ namespace TestQuadSolution
             Assert.AreEqual(0.0F, Math.Round(returnedValue.Item1 - expectedValue.Item1, 4));
         }
 
-        // Test for two-solution case: 2nd solution: 
+        // Test for two-solution case: 2nd solution:
         [TestMethod]
         public void Test2()
         {
@@ -43,7 +41,7 @@ namespace TestQuadSolution
             float b = 3.0F;
             float c = 2.0F;
             returnedValue = SolvableYesNo.Solvable(a, b, c);
-            Assert.AreEqual(returnedValue,expectedValue);
+            Assert.AreEqual(returnedValue, expectedValue);
         }
 
         // Test, if solution exists; in this case it does not:
@@ -58,7 +56,7 @@ namespace TestQuadSolution
             returnedValue = SolvableYesNo.Solvable(a, b, c);
             Assert.AreEqual(returnedValue, expectedValue);
         }
-        
+
         // Test the case when only one solution exists:
         [TestMethod]
         public void Test5()

@@ -4,18 +4,18 @@ using System.Collections.Specialized;
 
 namespace QuadEqWithInputVal
 {
-    /************************************************************************** 
+    /**************************************************************************
      * This program solves the quadratic equation ax^2 + b*x + c = 0 and take
      * INPUT: coefficients a, b and c (defined as floats)
      * VALIDATION: uses NuGet "fluentvalidation" to validate the input
      * OUTPUT: prints to the console if the equation is solvable, and if so,
      *         displays the solution
-     * 
+     *
      *************************************************************************/
 
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string str;
             bool resultParse;
@@ -38,7 +38,6 @@ namespace QuadEqWithInputVal
             // Input validation loop:
             while (true)
             {
-
                 for (int i = 0; i < myOrdDict.Count; i++)
                 {
                     while (true)
@@ -69,7 +68,6 @@ namespace QuadEqWithInputVal
                             break;
                         }
                     }
-
                 }
 
                 // Input validation through fluentvalidation (https://docs.fluentvalidation.net/en/latest/):
@@ -84,12 +82,10 @@ namespace QuadEqWithInputVal
                         Console.WriteLine(error.ErrorMessage);
                     }
                 }
-
                 else
                 {
                     break;
                 }
-
             }
 
             Console.WriteLine();

@@ -5,6 +5,7 @@
         public float a { get; set; }
         public float b { get; set; }
         public float c { get; set; }
+
         public Coefficients(float a, float b, float c)
         {
             this.a = a;
@@ -12,9 +13,11 @@
             this.c = c;
         }
     }
+
     public class CoeffValidator : AbstractValidator<Coefficients>
     {
-        float maxSize = float.MaxValue;
+        private float maxSize = float.MaxValue;
+
         public CoeffValidator()
         {
             RuleFor(x => x.a)

@@ -21,7 +21,6 @@ namespace QuadEqWithInputVal
             Console.WriteLine();
         }
 
-
         // Display the key (coefficient a, b or c) of the OrderedDictionary:
         public static string DisplayKey(ICollection keyCollection, int dictionarySize, int i)
         {
@@ -29,7 +28,6 @@ namespace QuadEqWithInputVal
             keyCollection.CopyTo(myKeys, 0);
             return myKeys[i];
         }
-
 
         // Display the value of a coefficient (a, b or c) of the OrderedDictionary:
         public static float DisplayValue(ICollection valueCollection, int dictionarySize, int i)

@@ -26,7 +26,7 @@
         // Calculation of the case when there is only one solution:
         public static float SingleResult(float a, float b, float c)
         {
-            float result = - b / 2.0F / a;
+            float result = -b / 2.0F / a;
             return (result);
         }
     }

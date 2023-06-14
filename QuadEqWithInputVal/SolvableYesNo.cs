@@ -19,7 +19,7 @@
             }
         }
 
-        public SolvableYesNo(float a, float b, float c) 
+        public SolvableYesNo(float a, float b, float c)
         {
             this.a = a;
             this.b = b;
