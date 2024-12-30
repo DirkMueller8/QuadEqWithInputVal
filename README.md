@@ -76,3 +76,39 @@ namespace QuadEqWithInputVal
 
 I used the MSTest library `Microsoft.VisualStudio.TestTools.UnitTesting` for unit testing, to cover various cases. 
 I also included a tolerance for the sake of incorporating rounding erros, as they can typically occur with floats.
+
+```Csharp
+namespace QuadEqWithInputVal
+{
+    public class Calculate
+    {
+        public float a { get; set; }
+        public float b { get; set; }
+        public float c { get; set; }
+
+        // Calculation of the two-result case:
+        public static (float, float) QuadResult(float a, float b, float c)
+        {
+            float quad;
+            quad = (float)Math.Sqrt(b * b - 4.0 * a * c);
+            float result1 = (quad - b) / 2.0F / a;
+            float result2 = (-quad - b) / 2.0F / a;
+            return (result1, result2);
+        }
+
+        public Calculate(float a, float b, float c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+
+        // Calculation of the case when there is only one solution:
+        public static float SingleResult(float a, float b, float c)
+        {
+            float result = -b / 2.0F / a;
+            return (result);
+        }
+    }
+}
+```
